@@ -1,0 +1,23 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '6.0.0'
+}
+
+repositories {
+    maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+}
+
+dependencies {
+    compile project(':common')
+    compileOnly 'org.spigotmc:spigot-api:1.16.4-R0.1-SNAPSHOT'
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        expand 'pluginVersion': project.ext.version
+        include 'plugin.yml'
+    }
+}
+
+shadowJar {
+    archiveName = "DomainAnalytics-Bukkit-v${project.ext.version}.jar"
+}

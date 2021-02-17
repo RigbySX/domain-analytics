@@ -1,0 +1,7 @@
+name: DomainAnalytics
+main: sx.rigby.analytics.bukkit.AnalyticsBukkitBootstrap
+version: ${pluginVersion}
+author: Rigby
+commands:
+  da:
+    description: Base plugin command.

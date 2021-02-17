@@ -1,0 +1,23 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '6.0.0'
+}
+
+repositories {
+    maven { url = 'https://oss.sonatype.org/content/groups/public/' }
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        expand 'pluginVersion': project.ext.version
+        include 'bungee.yml'
+    }
+}
+
+dependencies {
+    compile project(':common')
+    compileOnly 'net.md-5:bungeecord-api:1.16-R0.4'
+}
+
+shadowJar {
+    archiveName = "DomainAnalytics-BungeeCord-v${project.ext.version}.jar"
+}

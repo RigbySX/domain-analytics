@@ -1,0 +1,4 @@
+name: DomainAnalytics
+main: sx.rigby.analytics.bungee.AnalyticsBungeeBootstrap
+version: ${pluginVersion}
+author: Rigby

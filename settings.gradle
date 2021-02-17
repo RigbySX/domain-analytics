@@ -1,0 +1,5 @@
+rootProject.name = 'DomainAnalytics'
+include 'common'
+include 'bukkit'
+include 'bungee'
+
